@@ -18,15 +18,15 @@
 
 ## Features
 
-- **All-in-one toolkit**: CleanMyMac, AppCleaner, DaisyDisk, and iStat Menus combined into a **single binary**
-- **Deep cleaning**: Scans and removes caches, logs, and browser leftovers to **reclaim gigabytes of space**
-- **Smart uninstaller**: Thoroughly removes apps along with launch agents, preferences, and **hidden remnants**
-- **Disk insights**: Visualizes usage, manages large files, **rebuilds caches**, and refreshes system services
-- **Live monitoring**: Real-time stats for CPU, GPU, memory, disk, and network to **diagnose performance issues**
+- [x] **All-in-one toolkit**: CleanMyMac, AppCleaner, DaisyDisk, and iStat Menus combined into a **single binary**
+- [x] **Deep cleaning**: Scans and removes caches, logs, and browser leftovers to **reclaim gigabytes of space**
+- [x] **Smart uninstaller**: Thoroughly removes apps along with launch agents, preferences, and **hidden remnants**
+- [x] **Disk insights**: Visualizes usage, manages large files, **rebuilds caches**, and refreshes system services
+- [x] **Live monitoring**: Real-time stats for CPU, GPU, memory, disk, and network to **diagnose performance issues**
 
 ## Quick Start
 
-**Install via Homebrew:**
+**Install via `Homebrew`:**
 
 ```bash
 brew install mole
@@ -39,7 +39,7 @@ brew install mole
 curl -fsSL https://raw.githubusercontent.com/tw93/mole/main/install.sh | bash
 ```
 
-**Windows:** Mole is designed for macOS, but we offer an experimental Windows version based on user demand. See the [windows branch](https://github.com/tw93/Mole/tree/windows) — for early adopters only.
+**Windows:** `Mole` is designed for macOS, but we offer an experimental Windows version based on user demand. See the [windows branch](https://github.com/tw93/Mole/tree/windows) — **early adopters only**.
 
 **Run:**
 
@@ -255,31 +255,3 @@ curl -fsSL https://raw.githubusercontent.com/tw93/Mole/main/scripts/setup-quick-
 Adds 5 commands: `clean`, `uninstall`, `optimize`, `analyze`, `status`.
 
 Mole automatically detects your terminal, or set `MO_LAUNCHER_APP=<name>` to override. For Raycast users: if this is your first script directory, add it via Raycast Extensions → Add Script Directory, then run "Reload Script Directories".
-
-## Community Love
-
-Mole wouldn't be possible without these amazing contributors. They've built countless features that make Mole what it is today. Go follow them! ❤️
-
-<a href="https://github.com/tw93/Mole/graphs/contributors">
-  <img src="./CONTRIBUTORS.svg?v=2" width="1000" />
-</a>
-
-Join thousands of users worldwide who trust Mole to keep their Macs clean and optimized.
-
-<img src="https://cdn.tw93.fun/pic/lovemole.jpeg" alt="Community feedback on Mole" width="1000" />
-
-## Support
-
-- If Mole saved you disk space, consider starring the repo or [sharing it](https://twitter.com/intent/tweet?url=https://github.com/tw93/Mole&text=Mole%20-%20Deep%20clean%20and%20optimize%20your%20Mac.) with friends.
-- Have ideas or fixes? Check our [Contributing Guide](CONTRIBUTING.md), then open an issue or PR to help shape Mole's future.
-- Love Mole? <a href="https://miaoyan.app/cats.html?name=Mole" target="_blank">Buy Tw93 an ice-cold Coke</a> to keep the project alive and kicking! 🥤
-
-<details>
-<summary><strong>Friends who bought me Coke</strong></summary>
-<br/>
-<a href="https://miaoyan.app/cats.html?name=Mole"><img src="https://miaoyan.app/assets/sponsors.svg" width="1000" /></a>
-</details>
-
-## License
-
-MIT License — feel free to enjoy and participate in open source.
