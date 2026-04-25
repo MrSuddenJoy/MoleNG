@@ -30,8 +30,9 @@ curl -fsSL https://raw.githubusercontent.com/tw93/mole/main/install.sh | bash
 
 `Mole` is designed for macOS, but we offer an experimental Windows version based on user demand. See the [windows branch](https://github.com/tw93/Mole/tree/windows) — **early adopters only**.
 
-**Run:**
-
+<details>
+  <summary>Commands listing</summary>
+  
 ```bash
 mo                           # Interactive menu
 mo clean                     # Deep cleanup
@@ -58,6 +59,7 @@ mo optimize --debug          # Run with detailed operation logs
 mo optimize --whitelist      # Manage protected optimization rules
 mo purge --paths             # Configure project scan directories
 ```
+</details>
 
 ## Tips
 
@@ -68,166 +70,3 @@ mo purge --paths             # Configure project scan directories
 - **Navigation**: Supports arrow keys and Vim bindings (`h/j/k/l`).
 - **Status Shortcuts**: In `mo status`, press `k` to toggle cat visibility and save preference, `q` to quit.
 - **Configuration**: Run `mo touchid` for Touch ID sudo, `mo completion` for shell tab completion, `mo clean --whitelist` to manage protected paths.
-
-## Features in Detail
-
-### Deep System Cleanup
-
-```bash
-$ mo clean
-
-Scanning cache directories...
-
-  ✓ User app cache                                           45.2GB
-  ✓ Browser cache (Chrome, Safari, Firefox)                  10.5GB
-  ✓ Developer tools (Xcode, Node.js, npm)                    23.3GB
-  ✓ System logs and temp files                                3.8GB
-  ✓ App-specific cache (Spotify, Dropbox, Slack)              8.4GB
-  ✓ Trash                                                    12.3GB
-
-====================================================================
-Space freed: 95.5GB | Free space now: 223.5GB
-====================================================================
-```
-
-### Smart App Uninstaller
-
-```bash
-$ mo uninstall
-
-Select Apps to Remove
-═══════════════════════════
-▶ ☑ Photoshop 2024            (4.2G) | Old
-  ☐ IntelliJ IDEA             (2.8G) | Recent
-  ☐ Premiere Pro              (3.4G) | Recent
-
-Uninstalling: Photoshop 2024
-
-  ✓ Removed application
-  ✓ Cleaned 52 related files across 12 locations
-    - Application Support, Caches, Preferences
-    - Logs, WebKit storage, Cookies
-    - Extensions, Plugins, Launch daemons
-
-====================================================================
-Space freed: 12.8GB
-====================================================================
-```
-
-### System Optimization
-
-```bash
-$ mo optimize
-
-System: 5/32 GB RAM | 333/460 GB Disk (72%) | Uptime 6d
-
-  ✓ Rebuild system databases and clear caches
-  ✓ Reset network services
-  ✓ Refresh Finder and Dock
-  ✓ Clean diagnostic and crash logs
-  ✓ Remove swap files and restart dynamic pager
-  ✓ Rebuild launch services and spotlight index
-
-====================================================================
-System optimization completed
-====================================================================
-
-Use `mo optimize --whitelist` to exclude specific optimizations.
-```
-
-### Disk Space Analyzer
-
-```bash
-$ mo analyze
-
-Analyze Disk  ~/Documents  |  Total: 156.8GB
-
- ▶  1. ███████████████████  48.2%  |  📁 Library                     75.4GB  >6mo
-    2. ██████████░░░░░░░░░  22.1%  |  📁 Downloads                   34.6GB
-    3. ████░░░░░░░░░░░░░░░  14.3%  |  📁 Movies                      22.4GB
-    4. ███░░░░░░░░░░░░░░░░  10.8%  |  📁 Documents                   16.9GB
-    5. ██░░░░░░░░░░░░░░░░░   5.2%  |  📄 backup_2023.zip              8.2GB
-
-  ↑↓←→ Navigate  |  O Open  |  F Show  |  ⌫ Delete  |  L Large files  |  Q Quit
-```
-
-### Live System Status
-
-Real-time dashboard with system health score, hardware info, and performance metrics.
-
-```bash
-$ mo status
-
-Mole Status  Health ● 92  MacBook Pro · M4 Pro · 32GB · macOS 14.5
-
-⚙ CPU                                    ▦ Memory
-Total   ████████████░░░░░░░  45.2%       Used    ███████████░░░░░░░  58.4%
-Load    0.82 / 1.05 / 1.23 (8 cores)     Total   14.2 / 24.0 GB
-Core 1  ███████████████░░░░  78.3%       Free    ████████░░░░░░░░░░  41.6%
-Core 2  ████████████░░░░░░░  62.1%       Avail   9.8 GB
-
-▤ Disk                                   ⚡ Power
-Used    █████████████░░░░░░  67.2%       Level   ██████████████████  100%
-Free    156.3 GB                         Status  Charged
-Read    ▮▯▯▯▯  2.1 MB/s                  Health  Normal · 423 cycles
-Write   ▮▮▮▯▯  18.3 MB/s                 Temp    58°C · 1200 RPM
-
-⇅ Network                                ▶ Processes
-Down    ▮▮▯▯▯  3.2 MB/s                  Code       ▮▮▮▮▯  42.1%
-Up      ▮▯▯▯▯  0.8 MB/s                  Chrome     ▮▮▮▯▯  28.3%
-Proxy   HTTP · 192.168.1.100             Terminal   ▮▯▯▯▯  12.5%
-```
-
-Health score based on CPU, memory, disk, temperature, and I/O load. Color-coded by range.
-
-### Project Artifact Purge
-
-Clean old build artifacts (`node_modules`, `target`, `build`, `dist`, etc.) from your projects to free up disk space.
-
-```bash
-mo purge
-
-Select Categories to Clean - 18.5GB (8 selected)
-
-➤ ● my-react-app       3.2GB | node_modules
-  ● old-project        2.8GB | node_modules
-  ● rust-app           4.1GB | target
-  ● next-blog          1.9GB | node_modules
-  ○ current-work       856MB | node_modules  | Recent
-  ● django-api         2.3GB | venv
-  ● vue-dashboard      1.7GB | node_modules
-  ● backend-service    2.5GB | node_modules
-```
-
-> **Use with caution:** This will permanently delete selected artifacts. Review carefully before confirming. Recent projects — less than 7 days old — are marked and unselected by default.
-
-<details>
-<summary><strong>Custom Scan Paths</strong></summary>
-
-Run `mo purge --paths` to configure which directories to scan, or edit `~/.config/mole/purge_paths` directly:
-
-```shell
-~/Documents/MyProjects
-~/Work/ClientA
-~/Work/ClientB
-```
-
-When custom paths are configured, only those directories are scanned. Otherwise, it defaults to `~/Projects`, `~/GitHub`, `~/dev`, etc.
-
-</details>
-
-### Installer Cleanup
-
-Find and remove large installer files scattered across Downloads, Desktop, Homebrew caches, iCloud, and Mail. Each file is labeled by source to help you know where the space is hiding.
-
-```bash
-mo installer
-
-Select Installers to Remove - 3.8GB (5 selected)
-
-➤ ● Photoshop_2024.dmg     1.2GB | Downloads
-  ● IntelliJ_IDEA.dmg       850.6MB | Downloads
-  ● Illustrator_Setup.pkg   920.4MB | Downloads
-  ● PyCharm_Pro.dmg         640.5MB | Homebrew
-  ● Acrobat_Reader.dmg      220.4MB | Downloads
-  ○ AppCode_Legacy.zip      410.6MB | Downloads
