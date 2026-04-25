@@ -231,16 +231,3 @@ Select Installers to Remove - 3.8GB (5 selected)
   ● PyCharm_Pro.dmg         640.5MB | Homebrew
   ● Acrobat_Reader.dmg      220.4MB | Downloads
   ○ AppCode_Legacy.zip      410.6MB | Downloads
-```
-
-## Quick Launchers
-
-Launch Mole commands instantly from Raycast or Alfred:
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/tw93/Mole/main/scripts/setup-quick-launchers.sh | bash
-```
-
-Adds 5 commands: `clean`, `uninstall`, `optimize`, `analyze`, `status`.
-
-Mole automatically detects your terminal, or set `MO_LAUNCHER_APP=<name>` to override. For Raycast users: if this is your first script directory, add it via Raycast Extensions → Add Script Directory, then run "Reload Script Directories".
