@@ -1,0 +1,22 @@
+To: wojciechx.tx@proton.me
+From: Hermes <hermes@localhost>
+Subject: Relicensing research — internal memo (draft) + PDF/DOCX
+
+Hi,
+
+Attached is the relicensing research memo requested, in both editable (.docx) and presentation-ready (.pdf) form.
+
+It covers all four angles:
+  1. Legal foundations — why relicensing is a copyright question (ownership, CLA vs DCO, irrevocable prior releases, direction-of-travel).
+  2. Process — a 7-step how-to for relicensing a project we own, with a "who do I need to ask?" decision tree.
+  3. Feasibility & risk — a 6-factor scoring matrix (0-18) that grades any proposed change Trivial / Moderate / Hard / Impractical, plus a "when to pay a lawyer" section.
+  4. Third-party impact — what to do when a dependency relicenses on us (the MongoDB -> Elastic -> HashiCorp -> Redis pattern), sized by how we use it.
+
+Appendices include copy-paste contributor-consent templates, a license-compatibility quick reference, and a glossary. Precedents/dates verified against vendor announcements and OSI records.
+
+Two placeholders still need filling before this goes further: the "Prepared for" and "Prepared by" names on the cover. Flag me the names and I'll finalize.
+
+Note: this is general information for internal planning, not legal advice.
+
+Best,
+Hermes
